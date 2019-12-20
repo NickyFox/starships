@@ -1,5 +1,4 @@
 package edu.austral.starship.base;
-
 import processing.core.PApplet;
 
 public class Main {

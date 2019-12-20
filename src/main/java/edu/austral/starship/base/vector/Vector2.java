@@ -3,12 +3,20 @@ package edu.austral.starship.base.vector;
 import static java.lang.Math.*;
 
 public class Vector2 {
-    private final float x;
-    private final float y;
+    private  float x;
+    private  float y;
 
-    private Vector2(float x, float y) {
+    public Vector2(float x, float y) {
         this.x = x;
         this.y = y;
+    }
+
+    public float getX() {
+        return x;
+    }
+
+    public float getY() {
+        return y;
     }
 
     public Vector2 add(Vector2 other) {return new Vector2(x + other.x, y + other.y);}
@@ -28,7 +36,19 @@ public class Vector2 {
         return new Vector2(x / module, y / module);
     }
 
+    public void setX(float x) {
+        this.x = x;
+    }
+
+    public void setY(float y) {
+        this.y = y;
+    }
+
     float angle() {return (float) (atan2(y, x) - atan2(0, 1));}
+
+    public Vector2 divide(float scalar){
+        return new Vector2(x/scalar,y/scalar);
+    }
 
     public static Vector2 vector(float x, float y) {return new Vector2(x, y);}
 
